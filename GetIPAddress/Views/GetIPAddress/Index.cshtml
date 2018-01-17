@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<div class="container">
+<div id="ip">Loding.....</div>
+    <div id="city">Loding.....</div>
+    <div id="region">Loding.....</div>
+    <div id="conutry">Loding.....</div>
+    <div id="location">Loding.....</div>
+    <div id="org">Loding.....</div>
+
+
+</div>
+
+
+<script>
+    $(function () {
+        $.get('https://ipinfo.io', function (responce) {
+
+            $('#ip').html('IP:<b>' + responce.ip + '<b/>');
+            $('#city').html('City:<b>' + responce.city + '<b/>');
+            $('#region').html('Region:<b>' + responce.region + '<b/>');
+            $('#conutry').html('Country:<b>' + responce.country + '<b/>');
+            $('#location').html('Location:<b>' + responce.loc + '<b/>');
+            $('#org').html('Org:<b>' + responce.org + '<b/>');
+
+        },'jsonp');
+    });
+</script>
+
